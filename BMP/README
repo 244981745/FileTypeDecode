@@ -1,3 +1,6 @@
 BMP-RGB565
 BMP-RGB666
 for 160*80 LCD
+
+usage:
+  bmp -[16/18] [bmpfilename]
