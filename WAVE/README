@@ -1,0 +1,15 @@
+usage:\n\twave2code -[momo/stereo] [wavefilename]
+wave2code 
+  将wave文件转换成12bitcode，待完成
+
+16bit的PCM数据是有符号的，需要重新定位。（-32768重定位到0，32767重定位到0xfff（4095））
+  long tmp = （pcm16+32768）/ 16;
+  pcm12 = tmp & 0xfff;
+  
+wave 文件构成
+{
+  riff chunk 12bytes;
+  fmt  chunk 24|26bytes;
+  fact chunk 12bytes; //if fmt size == 26
+  data chunk --;      //
+}
