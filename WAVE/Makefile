@@ -5,4 +5,4 @@ wave.o:wave.c
 	gcc -c wave.c
 	
 clean:
-	rm -f *.o
+	rm -f *.o pcm.h

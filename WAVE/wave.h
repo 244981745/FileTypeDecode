@@ -4,6 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define	PCM		0x0001		//fmt size 16	not fact
+#define	ADPCM	0x0002		//18	need fact
+#define	IEEE_FLOAT	0x0003	//18	need
+#define	ITU_G711a	0x0006	//18	need
+#define	ITU_G711u	0x0007	//18	need
+#define	GSM610	0x0031		//20	need
+#define	ITU_G721A	0x0040	//?		need
+#define	OTHER	0xFFFE		//40	not
+
 struct Riff{
 	unsigned char RiffID[4];
 	unsigned char RiffSize[4];
@@ -32,6 +41,15 @@ struct Data{
 	unsigned char DataID[4];
 	unsigned char DataSize[4];
 	unsigned char *data;
+};
+
+struct BitStream{
+	FILE	*fp;
+	int		channel;
+	int		sample;
+	int		bitFmt;
+	int		dataSize;
+	int		outputchs;
 };
 
 int getRiff(struct Riff *riff,FILE *fp);

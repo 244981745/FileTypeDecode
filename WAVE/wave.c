@@ -1,5 +1,5 @@
 #include "wave.h"
-#define	INFO
+//#define	INFO
 
 int getRiff(struct Riff *riff,FILE *fp)
 {
