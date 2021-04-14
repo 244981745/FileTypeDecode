@@ -1,6 +1,20 @@
+/*****************************************************************************
+Copyright: 2021, xuanmoo.com
+File name: wave.c 
+Description: 
+		wav文件各块解码 
+Author: dsinjok
+Version: 1.0.0.0
+Date: 2021-4-14
+History: 
+*****************************************************************************/
+
 #include "wave.h"
 //#define	INFO
 
+/* 
+*	getRiff RIFF块解码 
+*/
 int getRiff(struct Riff *riff,FILE *fp)
 {
 	memset((void *)riff,'\0',sizeof(struct Riff));
@@ -20,6 +34,10 @@ int getRiff(struct Riff *riff,FILE *fp)
 	return 0;
 }
 
+
+/* 
+*	getFormat FORMAT块解码 
+*/
 int getFormat(struct Format *format,FILE *fp)
 {
 	int formatsize=0;
@@ -62,6 +80,9 @@ int getFormat(struct Format *format,FILE *fp)
 	return 0;
 }
 
+/* 
+*	getFact FACT块解码 
+*/
 int getFact(struct Fact *fact,FILE *fp)
 {
 	memset((void*)fact,'\0',sizeof(struct Fact));
@@ -83,6 +104,9 @@ int getFact(struct Fact *fact,FILE *fp)
 	return 0;
 }
 
+/* 
+*	getDataID_Size DATA块解码 
+*/
 int getDataID_Size(struct Data *data,FILE *fp)
 {
 	memset((void*)data,'\0',sizeof(struct Data));

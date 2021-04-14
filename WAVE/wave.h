@@ -1,9 +1,22 @@
+/*****************************************************************************
+Copyright: 2021, xuanmoo.com
+File name: wave.h
+Description: 
+		块结构定义、函数声明 
+Author: dsinjok
+Version: 1.0.0.0
+Date: 2021-4-14
+History: 
+*****************************************************************************/
+
 #ifndef	_WAVE_H
 #define	_WAVE_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
+//编码格式与fms大小、fact存在与否宏 
 #define	PCM		0x0001		//fmt size 16	not fact
 #define	ADPCM	0x0002		//18	need fact
 #define	IEEE_FLOAT	0x0003	//18	need
@@ -43,6 +56,7 @@ struct Data{
 	unsigned char *data;
 };
 
+//全局 
 struct BitStream{
 	FILE	*fp;
 	int		channel;
