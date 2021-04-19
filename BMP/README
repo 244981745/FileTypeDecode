@@ -17,10 +17,21 @@ usage:
       位图信息偏移地址 
 
 二、位图信息头(bitmap information)：40bytes
+    	1.infoSize[4]         //该部分大小
+      2.mapWidth[4]         //图宽
+      3.mapHeight[4]        //图高
+      4.mapPlanes[2]        //位面数 恒为1
+      5.pixelBitCount[2]   	//单像素位数 bits/pixel
+      6.mapcompress[4]      //压缩  0:BI_RGB不压缩 1：BI_RLE8 只用于8位位图  2：BI_RLE4 4比特游程编码  3：BI_BITFIELDS比特域  4：BI_JPEG  5：BI_PNG
+      7.mapSizeImage[4]     //位数据大小 BI_RGB时为0
+      8.mapXPelsPerMeter[4] //用象素/米表示的水平分辨率
+      9.mapYPelsPerMeter[4] //用象素/米表示的垂直分辨率。
+      10.mapClrUsed[4]      //文件使用的颜色数。如果为0，则表示使用了全部可能的颜色。如8-比特/象素表示为0x100或者 256。为0则没有使用调色板，如有则指示调色板索引数
+      11.mapClrImportant[4] //指定重要的颜色数。当该域的值等于颜色数时（或者等于0时），表示所有颜色都一样重要。
   
 
 三、调色板(color palette)：可选，由颜色索引数决定
-  
+      索引：(蓝，绿，红，Alpha)
 
 四、位图数据(bitmap data)：由图像尺寸决定
   
