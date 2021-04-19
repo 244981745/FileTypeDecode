@@ -4,3 +4,16 @@ for 160*80 LCD
 
 usage:
   bmp -[16/18] [bmpfilename]
+
+
+一、bmp文件头(bmp file header)：14bytes
+  1.bfType
+
+二、位图信息头(bitmap information)：40bytes
+  
+
+三、调色板(color palette)：可选，由颜色索引数决定
+  
+
+四、位图数据(bitmap data)：由图像尺寸决定
+  
