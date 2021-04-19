@@ -7,7 +7,14 @@ usage:
 
 
 一、bmp文件头(bmp file header)：14bytes
-  1.bfType
+  1.bfType：2bytes
+      位图文件的类型 bm：windows   ba：os/2 bitmap array   ci：color icon  cp：color pointer  ic：icon  pt： pointer
+  2.bfSize：4bytes
+      文件大小
+  3.bfReserved：4bytes
+      保留
+  4.bfOffBits：4bytes
+      位图信息偏移地址 
 
 二、位图信息头(bitmap information)：40bytes
   
